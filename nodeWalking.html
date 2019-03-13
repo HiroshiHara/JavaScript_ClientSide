@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>JavaScript本格入門</title>
-  </head>
-  <body>
-    <script type="text/javascript">
-      // 
-    </script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript本格入門</title>
+</head>
+
+<body>
+
+  <form>
+    <select id="programming_language">
+      <option value="Java">Java</option>
+      <option value="JavaScript">JavaScript</option>
+      <option value="C#">C#</option>
+      <option value="Perl">Perl</option>
+    </select>
+    <input type="submit" value="SEND">
+  </form>
+
+  <form>
+    <select class="favoriteMusic">
+      <option value="jazz">Jazz</option>
+      <option value="rock">Rock</option>
+      <option value="classic">Classic</option>
+    </select>
+    <input type="submit" value="SEND">
+  </form>
+
+  <script type="text/javascript">
+    // 前提：戻り値がHTMLelementsかHTMLCollectionかで挙動が異なる
+    // .プロパティ名が利用できるのはHTMLelementsだけ
+    // HTMLCollectionは配列である
+
+    // カレントノードから相対的にノードを取得する
+    // 一般的にはgetXxxx/queryXxxxで特定の要素を取得した後、
+    // 近接するノードを取得するのに利用する
+    // <select id="programming_language">を取得
+    var results = document.getElementById('programming_language');
+    console.log(results);
+    // <select>配下の子ノードを配列で取得
+    var opts = results.childNodes;
+    for (var i = 0; i < opts.length; i++) {
+      var opt = opts.item(i);
+      // nodeTypeプロパティでノードの種類を判定
+      if (opt.nodeType === 1) {
+        console.log(opt.value);
+      }
+    }
+
+    // firstChild/nextSibling
+    // firstChildプロパティで<select>要素の最初の子ノードを取得
+    var child = results.firstChild;
+    console.log(child);
+    while (child) {
+      if (child.nodeType === 1) {
+        console.log(child.value);
+      }
+      // nextSiblingで次の子ノード(弟ノード)を取得
+      child = child.nextSibling;
+    }
+
+    // lastChild/previousSibling
+    // lastChildプロパティで<select>要素の最後の子ノードを取得
+    var child = results.lastChild;
+    console.log(child);
+    while (child) {
+      if (child.nodeType === 1) {
+        console.log(child.value);
+      }
+      // previousSiblingで前の子ノード(兄ノード)を取得
+      child = child.previousSibling;
+    }
+
+    // firstElementChild/nextElementSibling
+    // 親ノード配下のうち、最初の要素ノードだけを返す
+    var child = results.firstElementChild;
+    console.log(child);
+    while (child) {
+      console.log(child.value);
+      // nextElementSiblingで次の要素ノードを取得
+      child = child.nextElementSibling;
+    }
+
+    // lastElementChild/previousElementSibling
+    // 親ノード配下のうち、最後の要素ノードだけを返す
+    var child = results.lastElementChild;
+    console.log(child);
+    while (child) {
+      console.log(child.value);
+      // previousElementSiblingで前の要素ノードを取得
+      child = child.previousElementSibling;
+    }
+
+    // getElementsByClassNameの戻り値は既に配列なので、そのまま処理可能
+    var results = document.getElementsByClassName('favoriteMusic');
+    console.log(results);
+    for (var i = 0; i < results.length; i++) {
+      console.log(results[i].textContent);
+    }
+  </script>
+
+</body>
+
 </html>
