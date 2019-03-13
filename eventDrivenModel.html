@@ -1,1 +1,102 @@
-a
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="nodeWalking.css">
+  <title>JavaScript本格入門</title>
+</head>
+
+<body>
+  <div class="header-context">
+
+  </div>
+  <div class="main-context">
+    <div class="event-handler">
+      <!-- タグ名 onイベント名 = "関数名()" -->
+      <input type="button" value="Button1" onclick="alert_click()">
+      <!-- 任意のidに関数を関連付ける -->
+      <input type="button" id="alert" value="Button2">
+      <input type="button" id="hello_world" value="Button3">
+      <input type="button" id="set_by_onload1" value="Button4">
+      <input type="button" id="set_by_onload2" value="Button5">
+      <input type="button" id="set_by_onload3" value="Button6">
+      <!-- イベントリスナー -->
+      <input type="text" id="set_by_DOMContentLoaded1" value="onblur">
+      <input type="text" id="set_by_DOMContentLoaded2" value="onfocus">
+      <input type="text" id="set_by_DOMContentLoaded3" value="onchange">
+    </div>
+  </div>
+  <div class="footer-context">
+
+  </div>
+  <script type="text/javascript">
+    // イベントドリブンモデル
+    // ボタンがクリックされた・マウスがホバーした・テキストボックスの内容が変わった
+    // などのイベントに応じてコードを実行すること
+    // イベントに応じて処理内容を定義したコードブロックをイベントハンドラ(イベントリスナー)と呼ぶ
+    // 宣言の仕方に応じて呼称が異なる
+
+    // タグ内の属性として宣言する
+    function alert_click() {
+      alert('Hello!');
+    }
+
+    // 任意のidに関数を関連付ける
+    window.onload = function() {
+      document.getElementById('alert').onclick = function() {
+        alert('World!');
+      }
+      // 個別要素のイベントハンドラはonloadイベントの配下に置く
+      // onload配下だとページ読み込みの後でgetElementByIdが実行されるので、
+      // イベントハンドラの設定が確実になる
+      document.getElementById('set_by_onload1').onclick = function() {
+        var style = this.style;
+        style.backgroundColor = 'red';
+        style.color = 'white';
+      }
+
+      document.getElementById('set_by_onload2').onclick = function() {
+        var style = this.style;
+        style.backgroundColor = 'blue';
+        style.color = 'white';
+      }
+
+      document.getElementById('set_by_onload3').onclick = function() {
+        var style = this.style;
+        style.backgroundColor = 'green';
+        style.color = 'white';
+      }
+    }
+
+    // onloadと関数の宣言を分けることも可能
+    // イベントハンドラは使い捨てが殆どなので、関数リテラルで十分
+    function helloWorld() {
+      document.getElementById('hello_world').onclick = function() {
+        alert('Hello, World!');
+      }
+    }
+    window.onmouseenter = helloWorld;
+
+    // イベントリスナー
+    // addEventListenerで宣言する
+    // イベントハンドラでは同一の要素・同一のイベントに対して
+    // 複数のイベントハンドラを結び付けられない
+    // elem.addEventListener(type, listener, capture)
+
+    // ページロード時に実行されるイベントリスナーを登録
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('set_by_DOMContentLoaded1').addEventListener('blur', function() {
+        this.value = 'AAA';
+      }, false);
+      document.getElementById('set_by_DOMContentLoaded2').addEventListener('focus', function() {
+        this.value = 'BBB';
+      }, false);
+      document.getElementById('set_by_DOMContentLoaded3').addEventListener('change', function() {
+        this.value = 'CCC';
+      }, false);
+    }, false);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+html, body {
+  margin : 0;
+}
+
+body {
+  height: 700px;
+}
+
+.header-context {
+  height: 120px;
+  background-color: #abe886;
+}
+
+.main-context {
+  height : 500px;
+  background-color: #dcf4cd;
+}
+
+#set_by_DOMContentLoaded1 {
+  display: inline;
+  width: 60px;
+  margin-left: 10px;
+}
+
+#set_by_DOMContentLoaded2 {
+  display: inline;
+  width: 60px;
+  margin-left: 10px;
+}
+
+#set_by_DOMContentLoaded3 {
+  display: inline;
+  width: 60px;
+  margin-left: 10px;
+}
+
+.footer-context {
+  height: 120px;
+  background-color: #c1c49d;
+}
