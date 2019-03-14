@@ -15,6 +15,31 @@ printUrlLog();
 function destroyScumSearchEngine() {
   var url = document.getElementById('scum');
   url.setAttribute('href', 'https://www.torproject.org');
-  url.textContent = 'I did it.';
+  window.alert('I did it.');
 }
-destroyScumSearchEngine();
+
+// attributesプロパティはその要素ノードのすべての属性を返す
+// 戻り値はNamedNodeMapオブジェクト
+// 属性名もしくはインデックス番号でアクセス可
+document.addEventListener('DOMContentLoaded', function() {
+  var id = document.getElementById('youtube');
+  // <img id="youtube">に含まれる属性リストを取得
+  var attrs = id.attributes;
+  // 属性リストから順に値を取り出し、その属性名:属性値のセットをログ出力
+  for (var i = 0; i < attrs.length; i++) {
+    var attr = attrs.item(i);
+    console.log(attr.name + ':' + attr.value);
+  }
+}, false);
+
+document.getElementById('youtube').addEventListener('click', function() {
+  var id = document.getElementById('youtube');
+  var attrs = id.attributes;
+  console.log(attrs);
+  for (var i = 0; i < attrs.length; i++) {
+    var attr = attrs.item(i);
+    if (attr.name == 'height' || attr.name == 'width') {
+      attr.value = '200px';
+    }
+  }
+}, false);
