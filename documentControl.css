@@ -1,0 +1,17 @@
+html, body {
+  margin : 0;
+}
+
+body {
+  height: 700px;
+}
+
+.header-context {
+  height: 120px;
+  background-color: #abe886;
+}
+
+.main-context {
+  height : 500px;
+  background-color: #dcf4cd;
+}
