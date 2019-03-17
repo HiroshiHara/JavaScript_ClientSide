@@ -43,3 +43,20 @@ document.getElementById('youtube').addEventListener('click', function() {
     }
   }
 }, false);
+
+// innerHTML/textContent
+// 指定要素の配下のテキストを取得/設定する
+// textContentは文字列をそのまま設定するので高速
+document.getElementById('textContent').addEventListener('click', function() {
+  document.getElementById('result_text').textContent = 'ボタンが押下されました' ;
+}, false);
+// innerHTMLはHTMLとして解釈するので万能だが低速
+document.getElementById('innerHTML').addEventListener('click', function() {
+  document.getElementById('result_html').innerHTML = '<a href="google.co.jp">google</a>';
+}, false);
+
+// innerHTML使用時はXSS脆弱性に注意
+document.getElementById('btn').addEventListener('click', function() {
+  var yourName = document.getElementById('yourName');
+  document.getElementById('result').innerHTML = 'welcome, ' + yourName.value + '!';
+}, false);
