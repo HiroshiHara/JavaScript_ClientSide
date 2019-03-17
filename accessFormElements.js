@@ -33,4 +33,22 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('checkBox_result').textContent = sliced;
   }, false);
 
+  // 指定されたラジオボタンの値を取得(関数)
+  var getRadioValue = function(name) {
+    var result = '';
+    var elems = document.getElementsByName(name);
+    for (var i = 0; i < elems.length; i++) {
+      var elem = elems.item(i);
+      if (elem.checked) {
+        result += elem.value;
+        break;
+      }
+    }
+    return result;
+  }
+
+  document.getElementById('radio_btn').addEventListener('click', function() {
+    document.getElementById('radio_result').textContent = getRadioValue('city');
+  }, false);
+  
 }, false);
