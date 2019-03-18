@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         elem.checked = true;
       }
     }
-  }
+  };
 
   // チェックボックスの初期値を焼き肉とラーメンに
   setCheckbox('food', ['焼き肉', 'ラーメン']);
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     return result;
-  }
+  };
 
   document.getElementById('radio_btn').addEventListener('click', function() {
     document.getElementById('radio_result').textContent = getRadioValue('city');
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
         break;
       }
     }
-  }
+  };
 
   // ラジオボタンの初期値を大阪に
   setRadioValue('city', '大阪');
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     return results;
-  }
+  };
 
   // リストボックスの選択結果を項目表示
   document.getElementById('list_btn').addEventListener('click', function() {
@@ -107,5 +107,40 @@ document.addEventListener('DOMContentLoaded', function() {
     var sliced = resultToString.slice(0, -2);
     document.getElementById('listBox_result').textContent = sliced;
   }, false);
+
+  // リストボックスの初期値を設定する
+  var setListBoxValue = function(name, array) {
+    var opts = document.getElementById(name).options;
+    console.log(opts);
+    for (var i = 0; i < opts.length; i++) {
+      var opt = opts.item(i);
+      if (array.indexOf(opt.value) > -1) {
+        opt.selected = true;
+      }
+    }
+  };
+
+  // リストボックスの初期値をボクシングと砲丸投げに
+  setListBoxValue('sports', ['ボクシング', '砲丸投げ']);
+
+  // ファイルの情報を取得する
+  var getFileProperty = function(name) {
+    var result = '';
+    var inputs = document.getElementById(name).files;
+    for (var i = 0; i < inputs.length; i++) {
+      result += inputs[i].name + '<br>';
+      result += inputs[i].type + '<br>';
+      result += inputs[i].size / 1024 + '<br>';
+      result += inputs[i].lastModifiedDate + '<br>';
+      result += '<br>';
+    }
+    var sliced = result.slice(0, -1);
+    return sliced;
+  };
+
+  document.getElementById('file_btn').addEventListener('click', function() {
+    var result = getFileProperty('file');
+    document.getElementById('file_result').innerHTML = result;
+  })
 
 }, false);

@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-  height: 700px;
+  height: 1500px;
 }
 
 .header-context {
@@ -12,8 +12,38 @@ body {
 }
 
 .main-context {
-  height : 500px;
+  height : 1500px;
   background-color: #dcf4cd;
+  text-align: center;
+  display: flex;
+}
+
+.form_content {
+  width: 100%;
+}
+.text_form {
+  text-align: center;
+  margin: 80px;
+}
+
+.checkBox_form {
+  text-align: center;
+  margin: 80px;
+}
+
+.radioBtn_form {
+  text-align: center;
+  margin: 80px;
+}
+
+.listBox_form {
+  text-align: center;
+  margin: 80px;
+}
+
+.file_form {
+  text-align: center;
+  margin: 80px;
 }
 
 .footer-context {

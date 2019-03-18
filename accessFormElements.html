@@ -13,51 +13,74 @@
   </div>
   <div class="main-context">
 
-    <form>
-      <label for="name">名前：</label>
-      <input type="text" id="name" name="name" size="30"><br>
-      <input type="button" id="text_btn" value="実行">
-    </form>
-    <div id="name_result">
-      名前を入力して下さい
-    </div><br>
+    <div class="form_content">
 
-    <form>
-      <label for="checkBox">チェックボックス：</label>
-      <label><input type="checkbox" name="food" value="ラーメン">ラーメン</label>
-      <label><input type="checkbox" name="food" value="カレー">カレー</label>
-      <label><input type="checkbox" name="food" value="焼き肉">焼き肉</label><br>
-      <input type="button" id="checkBox_btn" value="実行">
-    </form>
-    <div id="checkBox_result">
-      選択して下さい
-    </div><br>
 
-    <form>
-      <label for="radioButton">ラジオボタン：</label>
-      <label><input type="radio" name="city" value="東京">東京</label>
-      <label><input type="radio" name="city" value="大阪">大阪</label>
-      <label><input type="radio" name="city" value="名古屋">名古屋</label><br>
-      <input type="button" id="radio_btn" value="実行">
-    </form>
-    <div id="radio_result">
-      選択して下さい
-    </div><br>
+      <div class="text_form">
+        <form>
+          <label for="name">名前：</label>
+          <input type="text" id="name" name="name" size="30"><br>
+          <input type="button" id="text_btn" value="実行">
+        </form>
+        <div id="name_result">
+          名前を入力して下さい
+        </div><br>
+      </div>
 
-    <form>
-      <label for="listBox">リストボックス：</label><br>
-      <select id="sports" multiple>
-        <option value="ボクシング">ボクシング</option>
-        <option value="カバディ">カバディ</option>
-        <option value="フェンシング">フェンシング</option>
-        <option value="砲丸投げ">砲丸投げ</option>
-      </select><br>
-      <input type="button" id="list_btn" value="実行">
-    </form>
-    <div id="listBox_result">
-      選択して下さい
-    </div><br>
+      <div class="checkBox_form">
+        <form>
+          <label for="checkBox">チェックボックス：</label>
+          <label><input type="checkbox" name="food" value="ラーメン">ラーメン</label>
+          <label><input type="checkbox" name="food" value="カレー">カレー</label>
+          <label><input type="checkbox" name="food" value="焼き肉">焼き肉</label><br>
+          <input type="button" id="checkBox_btn" value="実行">
+        </form>
+        <div id="checkBox_result">
+          選択して下さい
+        </div><br>
+      </div>
 
+      <div class="radioBtn_form">
+        <form>
+          <label for="radioButton">ラジオボタン：</label>
+          <label><input type="radio" name="city" value="東京">東京</label>
+          <label><input type="radio" name="city" value="大阪">大阪</label>
+          <label><input type="radio" name="city" value="名古屋">名古屋</label><br>
+          <input type="button" id="radio_btn" value="実行">
+        </form>
+        <div id="radio_result">
+          選択して下さい
+        </div><br>
+      </div>
+
+      <div class="listBox_form">
+        <form>
+          <label for="listBox">リストボックス：</label><br>
+          <select id="sports" multiple>
+            <option value="ボクシング">ボクシング</option>
+            <option value="カバディ">カバディ</option>
+            <option value="フェンシング">フェンシング</option>
+            <option value="砲丸投げ">砲丸投げ</option>
+          </select><br>
+          <input type="button" id="list_btn" value="実行">
+        </form>
+        <div id="listBox_result">
+          選択して下さい
+        </div><br>
+      </div>
+
+      <div class="file_form">
+        <form>
+          <label for="file">ファイル：</label>
+          <!-- fileにmultiple属性で複数ファイル選択可 -->
+          <input type="file" id="file" name="file" multiple><br>
+          <input type="button" id="file_btn" value="実行">
+        </form>
+        <div id="file_result">
+          選択して下さい
+        </div>
+      </div>
+    </div>
   </div>
   <div class="footer-context">
 
