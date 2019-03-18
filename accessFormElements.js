@@ -33,6 +33,21 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('checkBox_result').textContent = sliced;
   }, false);
 
+  // チェックボックスの初期値を設定
+  var setCheckbox = function(name, value) {
+    var elems = document.getElementsByName('food');
+    for (var i = 0; i < elems.length; i++) {
+      var elem = elems.item(i);
+      // Array.indexOf()... 引数の要素がArrayの中のどれかと一致しなければ-1
+      if (value.indexOf(elem.value) > -1) {
+        elem.checked = true;
+      }
+    }
+  }
+
+  // チェックボックスの初期値を焼き肉とラーメンに
+  setCheckbox('food', ['焼き肉', 'ラーメン']);
+
   // 指定されたラジオボタンの値を取得(関数)
   var getRadioValue = function(name) {
     var result = '';
@@ -50,5 +65,47 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('radio_btn').addEventListener('click', function() {
     document.getElementById('radio_result').textContent = getRadioValue('city');
   }, false);
-  
+
+  // ラジオボタンの初期値を設定する
+  var setRadioValue = function(name, value) {
+    var elems = document.getElementsByName(name);
+    // ラジオボタンを走査し、valueが等しいものをcheckedに
+    for (var i = 0; i < elems.length; i++) {
+      var elem = elems.item(i);
+      if (elem.value === value) {
+        elem.checked = true;
+        break;
+      }
+    }
+  }
+
+  // ラジオボタンの初期値を大阪に
+  setRadioValue('city', '大阪');
+
+  // リストボックスの値を取得する
+  var getListBoxValue = function(name) {
+    // 選択結果を格納する配列
+    var results = [];
+    var opts = document.getElementById(name).options;
+    for (var i = 0; i < opts.length; i++) {
+      var opt = opts.item(i);
+      // リストボックスはselectedで判別
+      if (opt.selected) {
+        results.push(opt.value);
+      }
+    }
+    return results;
+  }
+
+  // リストボックスの選択結果を項目表示
+  document.getElementById('list_btn').addEventListener('click', function() {
+    var results = getListBoxValue('sports');
+    var resultToString = '';
+    for (var i = 0; i < results.length; i++) {
+      resultToString += results[i] + ', ';
+    }
+    var sliced = resultToString.slice(0, -2);
+    document.getElementById('listBox_result').textContent = sliced;
+  }, false);
+
 }, false);
