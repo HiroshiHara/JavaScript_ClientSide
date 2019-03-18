@@ -141,6 +141,22 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('file_btn').addEventListener('click', function() {
     var result = getFileProperty('file');
     document.getElementById('file_result').innerHTML = result;
-  })
+  }, false);
+
+  // テキストファイルの内容を取得する
+  document.getElementById('textFile_btn').addEventListener('click', function() {
+    // multiple属性を指定してないのでインデックス番号は0
+    var input = document.getElementById('textFile').files[0];
+    // FileReaderオブジェクトを生成
+    var reader = new FileReader();
+    // loadイベントリスナーを定義
+    reader.addEventListener('load', function() {
+      // テキストの内容を項目表示する
+      // reader.resultプロパティでテキストの内容を読み込む
+      document.getElementById('textFile_result').textContent = reader.result;
+    }, true);
+    // ファイル読み込みを実行
+    reader.readAsText(input, 'UTF-8');
+  }, false);
 
 }, false);

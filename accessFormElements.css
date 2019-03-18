@@ -46,6 +46,11 @@ body {
   margin: 80px;
 }
 
+.textFile_form {
+  text-align: center;
+  margin: 80px;
+}
+
 .footer-context {
   height: 120px;
   background-color: #c1c49d;
