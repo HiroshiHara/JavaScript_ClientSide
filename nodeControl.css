@@ -16,16 +16,36 @@ body {
 }
 
 .form_websit {
+  height: 170px;
   padding-left: 30px;
   padding-top: 40px;
   padding-bottom: 30px;
-  background-color: grey;
+  background-color: #dbadb5;
+  transition: margin .1s;
+  margin: 0;
 }
 
 .form_websit:hover {
   transition: margin .1s;
   margin: 10px;
 }
+
+.item_list {
+  height: 170px;
+  padding-left: 30px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  background-color: #ddafd9;
+  transition: margin .1s;
+  margin: 0;
+}
+
+.item_list:hover {
+  transition: margin .1s;
+  margin: 10px;
+}
+
+
 
 .footer-context {
   height: 120px;
