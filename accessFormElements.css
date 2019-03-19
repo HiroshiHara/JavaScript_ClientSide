@@ -1,5 +1,5 @@
 html, body {
-  margin : 0;
+  margin: 0;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
 }
 
 .main-context {
-  height : 1500px;
+  height: 1700px;
   background-color: #dcf4cd;
   text-align: center;
   display: flex;
@@ -21,6 +21,7 @@ body {
 .form_content {
   width: 100%;
 }
+
 .text_form {
   text-align: center;
   margin: 80px;
@@ -49,6 +50,17 @@ body {
 .textFile_form {
   text-align: center;
   margin: 80px;
+}
+
+.imgFile_form {
+  text-align: center;
+  margin: 80px;
+}
+
+#imgFile_appear {
+  text-align: center;
+  height: 200px;
+  width: 200px;
 }
 
 .footer-context {

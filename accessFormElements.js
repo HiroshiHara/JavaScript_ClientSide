@@ -155,8 +155,26 @@ document.addEventListener('DOMContentLoaded', function() {
       // reader.resultプロパティでテキストの内容を読み込む
       document.getElementById('textFile_result').textContent = reader.result;
     }, true);
+    // ファイル読み込みに失敗した場合のイベントリスナー
+    reader.addEventListener('error', function() {
+      console.log(reader.error.message);
+    }, true);
     // ファイル読み込みを実行
     reader.readAsText(input, 'UTF-8');
-  }, false);
+  }, true);
+
+  // バイナリファイルの内容を取得する
+  document.getElementById('imgFile_btn').addEventListener('click', function() {
+    var input = document.getElementById('imgFile').files[0];
+    var reader = new FileReader();
+    reader.addEventListener('load', function() {
+      // src属性にバイナリ(Data URL形式)を直接入れる
+      document.getElementById('imgFile_appear').src = reader.result;
+      // 「選択して下さい」を削除
+      document.getElementById('imgFile_result').textContent = '';
+    }, true);
+    // readAsDataURLでバイナリ読み込み
+    reader.readAsDataURL(input);
+  }, true);
 
 }, false);
