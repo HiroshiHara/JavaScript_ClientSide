@@ -15,37 +15,78 @@ body {
   height: 1760px;
 }
 
+.first_row {
+  display: flex;
+}
+
 .form_websit {
+  width: 100%;
   height: 170px;
   padding-left: 30px;
   padding-top: 40px;
   padding-bottom: 30px;
   background-color: #dbadb5;
   transition: margin .1s;
-  margin: 0;
+  margin: 10px;
 }
 
 .form_websit:hover {
   transition: margin .1s;
-  margin: 10px;
+  margin: 0;
 }
 
 .item_list {
+  width: 100%;
   height: 170px;
   padding-left: 30px;
   padding-top: 40px;
   padding-bottom: 30px;
   background-color: #ddafd9;
   transition: margin .1s;
-  margin: 0;
+  margin: 10px;
 }
 
 .item_list:hover {
   transition: margin .1s;
+  margin: 0;
+}
+
+.second_row {
+  display: flex;
+}
+
+.book_list {
+  height: 170px;
+  width: 100%;
+  padding-left: 30px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  background-color: #7ba9f2;
+  transition: margin .1s;
   margin: 10px;
 }
 
+.book_list:hover {
+  transition: margin .1s;
+  margin: 0;
+}
 
+#book_pict {
+  height: 170px;
+  width: 100%;
+  padding-left: 30px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  background-color: #7af1de;
+  text-align: center;
+  transition: margin .1s;
+  margin: 10px;
+}
+
+#book_pict:hover {
+  transition: margin .1s;
+  margin: 0;
+}
 
 .footer-context {
   height: 120px;
