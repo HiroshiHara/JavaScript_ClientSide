@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-  height: 2000px;
+  height: 700px;
 }
 
 .header-context {
@@ -12,7 +12,7 @@ body {
 }
 
 .main-context {
-  height: 1760px;
+  height: 550px;
 }
 
 .first_row {
