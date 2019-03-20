@@ -3,20 +3,116 @@ html, body {
 }
 
 body {
-  height: 700px;
+  height: 100vh;
 }
 
 .header-context {
-  height: 120px;
+  height: 10vh;
   background-color: #abe886;
 }
 
 .main-context {
-  height : 500px;
-  background-color: #dcf4cd;
+  height : 80vh;
+}
+
+.first_row {
+  margin-top: 2.5vh;
+  display: flex;
+  height: 25vh;
+}
+
+.first_child1 {
+  width: 100%;
+  background-color: #86d385;
+  margin: 5px;
+}
+
+.first_child2 {
+  width: 100%;
+  background-color: #86d385;
+  margin: 5px;
+}
+
+.second_row {
+  display: flex;
+  height: 25vh;
+}
+
+.second_child1 {
+  width: 100%;
+  background-color: #86d385;
+  margin: 5px;
+}
+
+.second_child2 {
+  width: 100%;
+  background-color: #86d385;
+  margin: 5px;
+}
+
+.third_row {
+  margin-bottom: 2.5vh;
+  display: flex;
+  height: 25vh;
+}
+
+.third_child1 {
+  width: 100%;
+  background-color: #86d385;
+  margin: 5px;
+}
+
+.third_child2 {
+  width: 5%;
+  background-color: #86d385;
+  margin: 5px;
+  transition: 10s;
 }
 
 .footer-context {
-  height: 120px;
+  height: 10vh;
   background-color: #c1c49d;
+}
+
+/* JavaScriptから呼び出す用 */
+.change_default {
+  width: 100%;
+  margin: 5px;
+  background-color: #86d385;
+  transition: .1s;
+}
+
+.change_red {
+  width: 100%;
+  margin: 5px;
+  background-color: #e8a492;
+  transition: .1s;
+}
+
+.change_blue {
+  width: 100%;
+  margin: 5px;
+  background-color: #92d1e8;
+  transition: .1s;
+}
+
+.change_yellow {
+  width: 100%;
+  margin: 5px;
+  background-color: #e6e892;
+  transition: .1s;
+}
+
+.change_purple {
+  width: 100%;
+  margin: 5px;
+  background-color: #c992e8;
+  transition: .1s;
+}
+
+.change_width {
+  width: 100%;
+  margin: 5px;
+  background-color: #e8c292;
+  transition: .3s;
 }
