@@ -51,4 +51,40 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('item_list').appendChild(fragment);
   }, false);
 
+  // 書籍名のリンクをクリックしたときの処理
+  var book_list = document.getElementById('book_list');
+  var delete_btn = document.getElementById('delete_btn');
+  var book_pict = document.getElementById('book_pict');
+  // <ul>配下の<a>をクリックしたときの処理
+  book_list.addEventListener('click', function(e) {
+    // data-isbn属性から<a>に紐付いたisbn値を取得
+    var isbn = e.target.getAttribute('data-isbn');
+    // isbn値が取得できた場合のみ処理を実行
+    if (isbn) {
+      // <img>要素を生成
+      var img = document.createElement('img');
+      img.src = 'http://www.wings.msn.to/books/' + isbn + '/' + isbn + '.jpg';
+      img.alt = '書籍画像';
+      img.height = 150;
+      img.width = 108;
+      // <div>要素配下に<img>が存在するか(画像が表示中か確認)
+      if (book_pict.getElementsByTagName('img').length > 0) {
+        // 存在する場合、新たな<img>で置換
+        book_pict.replaceChild(img, book_pict.lastChild);
+      } else {
+        // 存在しない場合、新たに<img>を追加し「削除」ボタンを有効に
+        book_pict.appendChild(img);
+        delete_btn.disabled = false;
+      }
+    }
+  }, false);
+
+  // 書籍画像削除ボタンを押下したときの処理
+  delete_btn.addEventListener('click', function() {
+    // <div>要素は以下の<img>要素を削除し、「削除」ボタンを無効に
+    book_pict.removeChild(book_pict.lastChild);
+    delete_btn.disabled = true;
+
+  }, false);
+
 }, false);
