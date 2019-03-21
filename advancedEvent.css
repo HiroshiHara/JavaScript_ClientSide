@@ -1,9 +1,10 @@
 html, body {
-  margin : 0;
+  margin: 0;
 }
 
 body {
   height: 100vh;
+  font-family: 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Sans', 'ヒラギノ角ゴシック', YuGothic, 'Yu Gothic', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic';
 }
 
 .header-context {
@@ -12,13 +13,16 @@ body {
 }
 
 .main-context {
-  height : 80vh;
 }
 
 .first_row {
   margin-top: 2.5vh;
   display: flex;
-  height: 25vh;
+  text-align: center;
+}
+
+.first_child1 p {
+  font-weight: bold;
 }
 
 .first_child1 {
@@ -35,7 +39,6 @@ body {
 
 .second_row {
   display: flex;
-  height: 25vh;
 }
 
 .second_child1 {
@@ -51,9 +54,7 @@ body {
 }
 
 .third_row {
-  margin-bottom: 2.5vh;
   display: flex;
-  height: 25vh;
 }
 
 .third_child1 {
@@ -67,6 +68,23 @@ body {
   background-color: #86d385;
   margin: 5px;
   transition: 10s;
+}
+
+.fourth_row {
+  margin-bottom: 2.5vh;
+  display: flex;
+}
+
+.fourth_child1 {
+  width: 100%;
+  background-color: #86d385;
+  margin: 5px;
+}
+
+.fourth_child2 {
+  width: 100%;
+  background-color: #86d385;
+  margin: 5px;
 }
 
 .footer-context {
