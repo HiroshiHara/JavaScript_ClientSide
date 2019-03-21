@@ -31,6 +31,10 @@ body {
   margin: 5px;
 }
 
+.first_child2 p {
+  font-weight: bold;
+}
+
 .first_child2 {
   width: 100%;
   background-color: #86d385;
@@ -39,6 +43,7 @@ body {
 
 .second_row {
   display: flex;
+  text-align: center;
 }
 
 .second_child1 {
@@ -47,10 +52,22 @@ body {
   margin: 5px;
 }
 
+.second_child1 p {
+  font-weight: bold;
+}
+
 .second_child2 {
   width: 100%;
   background-color: #86d385;
   margin: 5px;
+}
+
+.second_child2 p {
+  font-weight: bold;
+}
+
+#textarea {
+  background-color: #86d385
 }
 
 .third_row {
