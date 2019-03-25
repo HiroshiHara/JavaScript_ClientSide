@@ -1,5 +1,5 @@
 html, body {
-  margin : 0;
+  margin: 0;
 }
 
 body {
@@ -12,6 +12,6 @@ body {
 }
 
 .main-context {
-  height : 500px;
+  height: 500px;
   background-color: #dcf4cd;
 }
